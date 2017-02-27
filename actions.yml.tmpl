@@ -9,12 +9,12 @@ actions:
     filters:
     - filtertype: pattern
       kind: prefix
-      value: ${INDEX:logstash}-
+      value: ${INDEX}-
       exclude:
     - filtertype: age
       source: name
       direction: older
       timestring: '%Y.%m.%d'
       unit: days
-      unit_count: ${AGE:7}
+      unit_count: ${AGE}
       exclude:

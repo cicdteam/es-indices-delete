@@ -1,5 +1,6 @@
-#/bin/sh
+#!/bin/sh
 
-#envsubst '${AGE} ${INDEX}' </curator.yml.tmpl >/curator.yml
+envsubst '${AGE} ${INDEX}' </actions.yml.tmpl >/actions.yml
+envsubst '${ELASTICSEARCH_HOST} ${ELASTICSEARCH_PORT}' </config.yml.tmpl >/config.yml
 
-cat /curator.yml
+crond -f
