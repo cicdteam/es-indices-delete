@@ -20,7 +20,7 @@ RUN apk --no-cache add \
         libintl
 
 RUN echo '#!/bin/sh' | tee /etc/periodic/daily/curator \
- && echo 'curator --config /config.yml actions.yml' | tee -a /etc/periodic/daily/curator \
+ && echo 'curator --config /config.yml /actions.yml' | tee -a /etc/periodic/daily/curator \
  && chmod +x /etc/periodic/daily/curator
 
 ADD config.yml.tmpl  /config.yml.tmpl
